@@ -37,7 +37,7 @@ export class ProductosService {
 
   buscarProducto(termino: string){
 
-    if (this.productos.length===0){
+    if (this.productos.length === 0) {
       this.cargarProductos().then(() => {
         this.filtrarProductos(termino);
       });
@@ -54,7 +54,7 @@ export class ProductosService {
 
       const tituloLower = prod.titulo.toLocaleLowerCase();
 
-      if(prod.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf(termino)>=0) {
+      if ( prod.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf(termino) >= 0 ) {
         this.productosFiltrado.push(prod);
       }
     });
